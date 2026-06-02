@@ -1,1 +1,1 @@
-# CONTROLE-OBS-ESP32
+[⬇️ Baixar versão mais recente](../../releases/latest)
