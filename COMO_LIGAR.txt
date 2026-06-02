@@ -1,0 +1,7 @@
+1. Conectar USB
+2. Abrir OBS
+3. WINDOWS R
+4. digite CMD
+5.  Na tela preta coloca cd %USERPROFILE%\Desktop
+py python-projeto.py 
+6. depois da enter
