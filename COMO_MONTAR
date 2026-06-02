@@ -1,0 +1,65 @@
+PASSO A PASSO MONTAGEM 
+
+O QUE VAI PRECISAR :
+ESP32
+Display OLED I2C (SSD1306)
+Potenciômetro (controle de volume / barra)
+
+
+2. Ligação do OLED (I2C)
+
+O OLED tem 4 pinos:
+OLED	ESP32
+VCC	3V3
+GND	GND
+SDA	GPIO 15
+SCL	GPIO 4
+
+
+Passo a passo:
+Liga o VCC do OLED no 3V3 do ESP32
+Liga o GND do OLED no GND do ESP32
+Liga o SDA no pino 15
+Liga o SCL no pino 4
+
+
+
+
+🎚️ 3. Ligação do potenciômetro
+
+O potenciômetro tem 3 pinos:
+
+[ 1 ] [ 2 ] [ 3 ]
+Ligação correta:
+Potenciômetro	ESP32
+
+Pino 1	3V3
+
+Pino 2 (meio / sinal)	GPIO 34
+
+Pino 3	GND
+
+MUITO IMPORTANTE
+O pino do meio SEMPRE é o sinal
+GPIO 34 é só entrada (perfeito pra leitura analógica)
+Nunca ligue potenciômetro em 5V no ESP32
+
+4. Esquema geral (resumo visual)
+ESP32
+│
+├── OLED
+│   ├── VCC → 3V3
+│   ├── GND → GND
+│   ├── SDA → GPIO 15
+│   └── SCL → GPIO 4
+│
+├── POTENCIÔMETRO
+    ├── 1 → 3V3
+    ├── 2 → GPIO 34
+    └── 3 → GND
+5. Erros comuns (evita isso)
+
+❌ OLED não liga → quase sempre é VCC/GND invertido
+❌ Tela branca → SDA/SCL trocados
+❌ Valor do pot bugado → não ligou no GND
+❌ Leitura instável → fio solto no pino do meio
